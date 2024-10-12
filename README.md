@@ -13,7 +13,6 @@ Las siguientes instrucciones son para ejecutar el proyecto LOCALMENTE. El primer
 y luego de esto clonar el repositorio desde la terminal de la siguiente manera:
 
 ```
-
 git clone https://github.com/leoncico/AREP-LAB06.git
 
 ```
@@ -24,7 +23,6 @@ Seguido de esto, se ingresa a la carpeta resultante y se ejecutan los siguientes
 * Para compilar el proyecto
 
 ```
-
 mvn clean install
 
 ```
@@ -32,16 +30,12 @@ mvn clean install
 * Finalmente para ejecutar la aplicación
 
 ```
-
 mvn spring-boot:run
 
 ```
 
   
-
 Luego ingresa desde un Browser a la dirección [localhost:8080]() para interactuar con la aplicación web.
-
-  
 
   
 
@@ -68,6 +62,8 @@ Video del despliegue en funcionamiento: https://youtu.be/fKNLOPu5Kbs
 ```mermaid
 graph TD
 
+    F[Client] -->|HTTPS| B
+
     subgraph "AWS EC2"
         direction TB
 
@@ -83,7 +79,7 @@ graph TD
             D --> E
         end
 
-        F[Client] -->|HTTPS| B
+        
 
         B -->|HTTPS| D
         B -->|GET POST DELETE PUT| D
