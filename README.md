@@ -1,6 +1,6 @@
 # AREP-LAB06
 Autor: David Leonardo Piñeros Cortés
-## Taller de Patrones Arquitecturales en la Nube
+## Taller: Security Application Design
 El objetivo de este taller es integrar un sistema de logeo y registro a la aplicación web anteriormente desarrollada de administración de propiedades inmobiliarias en Spring-Boot, donde el usuario puede consultar, ingresar, editar y eliminar registros. Adicionalmente se quiere desplegar en AWS con dos instancias, una para alojar los archivos del front la cual hará las peticiones a la otra instancia que tendrá todo el backend de la aplicación
 
 ## Instalación y Ejecución
@@ -31,10 +31,8 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-  
-Luego ingresa desde un Browser a la dirección [localhost:8080]() para interactuar con la aplicación web.
+Luego ingresa desde un Browser a la dirección localhost:8080 para interactuar con la aplicación web.
 
-  
 
 Para probar la funcionalidad clickea en el texto: **¿No tienes cuenta? Regístrate aquí.** A continuación ingrese un usuario y contraseña
 
@@ -53,7 +51,7 @@ Posteriormente puede logearse con la cuenta registrada anteriormente y se le red
 
 ### Despliegue
 
-Se desplegó la aplicación en AWS EC2, donde se tenían dos instancias con apache instalado. Una de las instancias aloja los archivos del front, es decir, html, css y js. La otra instacia ejecuta spring-boot con el todo el backend de la aplicación, incluyendo una base de datos en H2. Para cada instancia se instaló un certificado SSL con la ayuda de la aplicación [Certbot (eff.org)](https://certbot.eff.org/) para que fuese posible ingresar por medio de https, ya sea al front o para realizar las peticiones al back.
+Se desplega la aplicación en AWS EC2, donde se tienen dos instancias con apache instalado. Una de las instancias aloja los archivos del front, es decir, html, css y js. La otra instacia ejecuta spring-boot con todo el backend de la aplicación, incluyendo una base de datos en H2. Para cada instancia se instaló un certificado SSL con la ayuda de la aplicación [Certbot (eff.org)](https://certbot.eff.org/) para que fuese posible ingresar por medio de https, ya sea al front o para realizar las peticiones al back.
 Video del despliegue en funcionamiento: https://youtu.be/fKNLOPu5Kbs
 
 ```mermaid
