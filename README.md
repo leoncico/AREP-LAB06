@@ -66,53 +66,30 @@ Se desplegó la aplicación en AWS EC2, donde se tenían dos instancias con apac
 Video del despliegue en funcionamiento: https://youtu.be/fKNLOPu5Kbs
 
 ```mermaid
-graph  TD
+graph TD
 
-  
+    subgraph "AWS EC2"
+        direction TB
 
-subgraph  "AWS EC2"
+        subgraph Frontend_Instance
+            B[Apache HTML, CSS, JS]
+            C[SSL Cert]
+            B --> C
+        end
 
-direction  TB
+        subgraph Backend_Instance
+            D[Spring Boot App]
+            E[SSL Cert]
+            D --> E
+        end
 
-subgraph  Frontend_Instance
+        F[Client] -->|HTTPS| B
 
-B[Apache HTML, CSS, JS]
+        B -->|HTTPS| D
+        B -->|GET POST DELETE PUT| D
+        D -->|Response: JSON| B
+    end
 
-C[SSL Cert]
-
-B  -->  C
-
-end
-
-  
-
-subgraph  Backend_Instance
-
-D[Spring Boot App]
-
-E[SSL Cert]
-
-D  -->  E
-
-end
-
-  
-
-  
-
-B  -->|HTTPS|  D
-
-B  -->|GET POST DELETE PUT|  D
-
-D  -->|Response: JSON|  B
-
-  
-
-end
-
-  
-
-F[Client]  -->|HTTPS|  B
 ```  
 
 ## Arquitectura
