@@ -14,7 +14,6 @@ y luego de esto clonar el repositorio desde la terminal de la siguiente manera:
 
 ```
 git clone https://github.com/leoncico/AREP-LAB06.git
-
 ```
 
 
@@ -24,14 +23,12 @@ Seguido de esto, se ingresa a la carpeta resultante y se ejecutan los siguientes
 
 ```
 mvn clean install
-
 ```
 
 * Finalmente para ejecutar la aplicación
 
 ```
 mvn spring-boot:run
-
 ```
 
   
@@ -229,9 +226,7 @@ User : is Entity
 Para ejecutar las pruebas ejecute el comando:
 
 ```
-
 mvn test
-
 ```
 
 Se implementaron las siguientes pruebas:
@@ -244,7 +239,6 @@ Se implementaron las siguientes pruebas:
 
 ![](img/05.PNG)
 
-  
 
 ## Build With
 
